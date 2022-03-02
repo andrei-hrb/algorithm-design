@@ -1,0 +1,17 @@
+eratosthenes(n) {
+    prime = [true | x from [0..n]];
+
+    foreach i from [2..int(sqrt(n))]
+        if (prime[i] == true)
+            for (j = i + i; j <= n; j += i)
+                prime[j] = false;
+
+    returnable = emptyList;
+    for (i = 1; i <= n; i++)
+        if (prime[i]) returnable.pushBack(i);
+
+    return returnable;
+}
+
+a = 29;
+print(eratosthenes(a));

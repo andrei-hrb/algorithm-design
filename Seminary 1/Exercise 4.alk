@@ -1,0 +1,20 @@
+/*  @input  un număr n a.î. x fiind un număr din Șirul lui Fibonacci | x <= n
+    @output suma numerelor prime și pare din sirul lui Fibonacci                           */
+
+sum_of_even_fibonacci_numbers(n) {
+    sum = 0;
+    st = 1; // first value
+    nd = 2; // second value
+    
+    while (st <= 4000000) {
+        if (nd % 2 == 0) sum += nd;
+    
+        aux = nd;
+        nd += st;
+        st = aux;
+    }
+
+    return sum;
+}
+
+print(sum_of_even_fibonacci_numbers(4000000));
